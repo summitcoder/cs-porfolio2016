@@ -1,0 +1,21 @@
+#navbar {
+    text-align: center;
+}
+
+#navbar li{
+        display:inline-block;
+        border: 2px solid black;
+        padding: 10px;
+        Border-radius: 50%;
+        background-color:black
+
+}
+
+#navbara a {
+    color:black;
+    
+}
+
+.centered-stuff {
+    text-align: center;
+}
