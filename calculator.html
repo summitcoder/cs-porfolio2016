@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About me</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <style>
+        .picture {
+            width: 300px;
+        }
+        
+        .container > * {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .center {
+            text-align: center;
+        }
+        .smaller-image {
+            height: 300px;
+        }
+        .other-image {
+            height: 85px;
+        }
+        .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+        }
+    </style>
+    
+<h1 style="text-align:center; color: green">
+        Calculator
+    </h1>
+    
+
+    <ul id="navbar">
+        <li><a href="index.html"> About me </a></li>
+        <li><a href="hardware.html"> Hardware </a></li>
+        <li><a href="how to.html"> How to </a></li>
+        <li><a href="calc.html"> Calculator </a></li>
+        <li><a href="todo.html">Todo List </a></li>
+        <li><a href="vind.html">Vindinium </a></li>
+        <li><a href="bigproject.html"> Big Project </a></li>
+    </ul>
+    
+    <body>
+        
+        <br>
+        <br>
+        
+  <input id="num1">Number</input>
+  
+<select id="drop">
+  <option value="add">+</option>
+  <option value="subtract">-</option>
+  <option value="multiply">*</option>
+  <option value="divide">/</option>
+  <option value="square root">Square root</option>
+  <option value="percentage">%</option>
+</select>
+
+  <input id="num2">Number 2</input>
+  <p>=</p>
+  
+  <button id="btn">answer</button>
+  
+  <span id=display></span>
+
+<script src="calculator.js"></script>
+
+    </body>
+</html>
