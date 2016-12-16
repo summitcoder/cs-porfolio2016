@@ -8,7 +8,7 @@ btn.addEventListener("click", function(){
     var num1 = num1input.value;
     var num2 = num2input.value;
 
-
+//This part of the code is for the actual calculations//
     if(drop.value == "add"){
         answer = +num1 + +num2;
         display.innerHTML = answer;
@@ -30,6 +30,12 @@ btn.addEventListener("click", function(){
         var answerd = +num1 / +num2;
         display.innerHTML = answerd;
     }
+    else if(drop.value == "power of"){
+        var answere = Math.pow(num1,num2);
+        display.innerHTML = answere;
+    }
+    
+    
     // else if
     
 });
