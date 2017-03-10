@@ -1,9 +1,218 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> </title>
-    </head>
-    <body>
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Vindinium</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <style>
+        .picture {
+            width: 300px;
+        }
+        
+        .container>* {
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .smaller-image {
+            height: 300px;
+        }
+        
+        .other-image {
+            height: 85px;
+        }
+        
+        .white-text {
+            color: #ffffff;
+        }
+        
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <h1 style="text-align:center; color: green">
+        How to make an AI bot
+    </h1>
+
+    <ul id="navbar">
+        <li><a href="index.html"> About me </a></li>
+        <li><a href="hardware.html"> Hardware </a></li>
+        <li><a href="how to.html"> How to </a></li>
+        <li><a href="calculator.html"> Calculator </a></li>
+        <li><a href="To do.html">Todo List </a></li>
+        <li><a href="vind.html">Vindinium </a></li>
+        <li><a href="bigproject.html"> Big Project </a></li>
+    </ul>
+
+    <body background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/Black-Background-Images-11.jpg">
+
+        <body>
+            <hr>
+            <h1 class="title white-text centered-stuff">
+                What is Vindinium?
+            </h1>
+
+            </div>
+            <p style="width: 75s%;" class="font-size white-text">
+                In this project we had to make bots that would compete againts each other in an arena. The bot that had the most amount of gold in the end would win the game. This required us to code the AI so it would seek mines, go to taverns when its low health and
+                attack other bots when it can. We put our bots in a server to go againts other peoples bots and see who can code the best bot. The more complex your code is the better chance your bot has to win. The server sends your bot information and
+                then your bot uses that information to do things that will allow it to win.
+            </p>
+            </div>
+
+            <h1 class="title white-text centered-stuff">
+                My Code
+                </div>
+                <p style="width: 75s%;" class="font-size">
+                    This is all the code that is needed to make my bot
+
+                    <code><pre style="text-align:left; font-size:14px;">
+    
+var Bot = require('bot');
+var PF = require('pathfinding');
+// var bot = new Bot('YOUR_KEY_HERE', 'training', 'http://vindinium.org'); //Put your bot's code here and change training to Arena when you want to fight others.
+var bot = new Bot('fkoeu6qn', 'training', 'http://v.summitdevclub.com:9000'); //Put your bot's code here and change training to Arena when you want to fight others.
+var goDir;
+var Promise = require('bluebird');
+Bot.prototype.botBrain = function() {
+    return new Promise(function(resolve, reject) {
+        _this = bot;
+        
+        var myDir;
+        
+        var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
+        
+        var enemyBots = [];
+        if(bot.yourBot.id != 1) enemyBots.push(bot.bot1);
+        if(bot.yourBot.id != 2) enemyBots.push(bot.bot2);
+        if(bot.yourBot.id != 3) enemyBots.push(bot.bot3);
+        if(bot.yourBot.id != 4) enemyBots.push(bot.bot4);
+        
+         var task = "none"
+
+        if(bot.yourBot.life < 20){
+            task = "tavern"
+        }
+        else if(bot.yourBot.mineCount === 0){
+            task = "freemine"
+    
+        }
+        else{ 
+            task = "attackenemyBots"
+        }
+        
+        if(task === "freemine"){
+            var closemine = bot.freeMines[0]
+            for(var i = 0; i < bot.freeMines.length; i++){
+                if(bot.findDistance(myPos, closemine) >bot.findDistance(myPos, bot.freeMines[i])){
+                    closemine = bot.freeMines[i] 
+                }
+            }
+            console.log("You are the best, you collected a mine");
+            myDir = bot.findPath(myPos, closemine)
+        }
+        
+        if(task === "tavern"){
+            var closeTavern = bot.taverns[0]
+            for(var i = 0; i < bot.taverns.length; i++){
+                if(bot.findDistance(myPos, closeTavern ) > bot.findDistance(myPos, bot.Taverns[i])){
+                    closeTavern = bot.taverns[i];
+            }
+         }
+        console.log("You are healed up");
+        myDir = bot.findPath(myPos, closeTavern)
+     }
+     
+     if(task === "attackenemyBots"){
+            var killEnemyBots = enemyBots[0]
+            for (var i=0; i < enemyBots.length; i++){
+                if(bot.findDistance(myPos, killEnemyBots.posArray ) > bot.findDistance(myPos, enemyBots[i])){
+                    killEnemyBots = enemyBots[i];
+                } 
+         }
+        console.log("you are destoring that beast");
+        myDir = bot.findPath(myPos, killEnemyBots.posArray)
+     }
+            
+        if(task === "none") {
+            console.log("Going Random!");
+            var rand = Math.floor(Math.random() * 4);
+            var dirs = ["north", "south", "east", "west"];
+            myDir = dirs[rand];
+        }
+        
+        The overall strategy for my bot is to get mines that are free and then attack enemy bots when it has done that. 
+        so basically go on a killing spree to get the mines that other bots have. 
+        
+</pre></code>
+                </p>
+
+                </div>
+
+                <h1 class="title white-text centered-stuff">
+                    Tavern Code
+                </h1>
+
+                </div>
+                <p style="width: 75s%;" class="white-text">
+
+                    <code><pre style="text-align:left; font-size:14px;" class="white-text">
+         if(task === "tavern"){
+            var closeTavern = bot.taverns[0]
+            for(var i = 0; i < bot.taverns.length; i++){
+                if(bot.findDistance(myPos, closeTavern ) > bot.findDistance(myPos, bot.Taverns[i])){
+                    closeTavern = bot.taverns[i];
+            }
+         }
+        console.log("You are healed up");
+        myDir = bot.findPath(myPos, closeTavern)
+     }
+     
+     This piece of code is so my bot goes to get health for when it has taken damage from other bots.
+     So I need to make an "if" statement to kick off this line of code. So our task is tavern then we 
+     make a "var" to make the bot go after the tavern that is the closest to my bot. You need to find 
+     the length from you to the tavern that appears closest to you. So the "i++" goes through every 
+     mine that is close to you until it finds the mine that is closest to my bot. 
+     
+     </pre></code>
+                </p>
+                </div>
+
+                <h1 class="title white-text centered-stuff">
+                   Mines Code
+                </h1>
+
+                </div>
+                <p style="width: 75s%;" class="white-text">
+
+                    <code><pre style="text-align:left; font-size:14px;" class="white-text">
+         
+     if(task === "freemine"){
+            var closemine = bot.freeMines[0]
+            for(var i = 0; i < bot.freeMines.length; i++){
+                if(bot.findDistance(myPos, closemine) >bot.findDistance(myPos, bot.freeMines[i])){
+                    closemine = bot.freeMines[i] 
+                }
+            }
+            console.log("You are the best, you collected a mine");
+            myDir = bot.findPath(myPos, closemine)
+        }
+     
+     This part of my code is for 
+     </pre></code>
+                </p>
+                </div>
+        </body>
+
 </html>
