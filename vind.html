@@ -209,10 +209,44 @@ Bot.prototype.botBrain = function() {
             myDir = bot.findPath(myPos, closemine)
         }
      
-     This part of my code is for 
+     This part of my code is for finding mines that are not owned by any players so I can get gold 
+     in order to win the game. The "var" is "closemine" to identify that the bot needs to find the 
+     closest mine that is free. So if the bot has 0 mines the bot will run the code above. After it 
+     figures out that it needs mines it will looks for the closest mine to him. To do this it takes 
+     the position of the bot relative to the mine that is closest to him, it goes through a loop 
+     picking which mine is the closets to the bot, so it can determine which one to go to. It checks 
+     the distance between the bot and the mine and picks the one that is the closest to the bot. 
+     </head>
      </pre></code>
                 </p>
                 </div>
+                
+                <h1 class="title white-text centered-stuff">
+                    Code for Attacking enemy bots 
+                </h1>
+
+                </div>
+                <p style="width: 75s%;" class="white-text">
+
+                    <code><pre style="text-align:left; font-size:14px;" class="white-text">
+                        \
+         if(task === "attackenemyBots"){
+            var killEnemyBots = enemyBots[0]
+            for (var i=0; i < enemyBots.length; i++){
+                if(bot.findDistance(myPos, killEnemyBots.posArray ) > bot.findDistance(myPos, enemyBots[i])){
+                    killEnemyBots = enemyBots[i];
+                } 
+         }
+        console.log("you are destoring that beast");
+        myDir = bot.findPath(myPos, killEnemyBots.posArray)
+     }
+     
+    
+     </head>
+     </pre></code>
+                </p>
+                </div>
+
         </body>
 
 </html>
