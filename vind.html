@@ -229,7 +229,7 @@ Bot.prototype.botBrain = function() {
                 <p style="width: 75s%;" class="white-text">
 
                     <code><pre style="text-align:left; font-size:14px;" class="white-text">
-                        \
+                        
          if(task === "attackenemyBots"){
             var killEnemyBots = enemyBots[0]
             for (var i=0; i < enemyBots.length; i++){
@@ -241,12 +241,33 @@ Bot.prototype.botBrain = function() {
         myDir = bot.findPath(myPos, killEnemyBots.posArray)
      }
      
-    
+    This part of my code is so my bot can attack other bots after its done getting mines. I did this so it would 
+    get gold while it was fighting other bots and it would get the mines that other bots owned. This part of my 
+    code is at the end and is an else statement so it only runs if all the parts of the code obove it are done. 
+    So like the rest of the code for the mines and the taverns I need to add a part of the code that finds the 
+    distance from me and other bots. So I need to find bots in order for me to kill them, how I do that is use 
+    my var "killEnemyBots" and add "posArray" to it so I can find the x,y coordinates of them. 
      </head>
      </pre></code>
                 </p>
                 </div>
+     <h1 class="title white-text centered-stuff">
+                What did I learn?
+            </h1>
 
+            </div>
+            <p style="width: 75s%;" class="font-size white-text">
+     I did not have a chance to test my bot in the arena but it did what I wanted it to when I was practicing.
+     I ran into some troubles when it came to making it what I wanted to do since I did not fully understand the 
+     "language" in the sense that I could not read the code and fully understand what each part of the code meant.
+     For me it was very complicated to learn how to do the simple steps of making the bot. I did not know what each
+     line of code meant and had trouble moving forward with out teacher help or peer help. My preseption of AI 
+     changed a lot because I thought they were semi-atonomous and did not need a lot of code but now I know that 
+     they completely rely on code to know what to do and to "adapt" to a changing situation. This project really 
+     pushed me to get things done and try my hardest to understand the code that I was typing and get appropiate 
+     help when I needed it. 
+            </p>
+            </div>
         </body>
 
 </html>
