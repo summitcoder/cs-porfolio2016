@@ -1,0 +1,101 @@
+  <html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About me</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <style>
+        .picture {
+            width: 300px;
+        }
+        
+        .container > * {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .center {
+            text-align: center;
+        }
+        .smaller-image {
+            height: 300px;
+        }
+        .other-image {
+            height: 85px;
+        }
+         .white-border{
+            border-width: 2px;
+            color: white;
+            border: solid;
+        }
+        .position{
+            position: absolute; left 20px; top:50px;
+        }
+    </style>
+
+</head>
+
+    
+      <ul id="navbar">
+        <li><a href="index.html"> About me </a></li>
+        <li><a href="hardware.html"> Hardware </a></li>
+        <li><a href="how to.html"> How to </a></li>
+        <li><a href="calculator.html"> Calculator </a></li>
+        <li><a href="todo.html">Todo List </a></li>
+        <li><a href="vind.html">Vindinium </a></li>
+        <li><a href="bigproject.html"> Big Project </a></li>
+        <li><a href="calculator.html"> Calculator </a></li>
+    </ul>
+    
+     <body background="http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/07/Black-Background-Images-11.jpg">
+</body>
+
+    <h1 style="width: 75s%;" class="title white-text">
+        How to make text display when you click an image
+    </h1>
+    
+     <div class="center">
+        <img class="smaller-image" src="Images/Code.png"></img>
+    </div>
+    
+     <p style="width: 75s%;" class="font-size white-text white-border">
+              You need to use javascript to make text pop up when you click the image.
+              So first you need to put the images in a var tag here to difine the images 
+              and the text that you are gonna use in the website. You use the var tag and 
+              getElementById to difine them, I made sure to name the var's something related
+              to the img or the text. I put "Img" next to the images so I wouldn't get 
+              them confused when I was adding the event listeners. I started the var with 
+              the information with hitlerinfo so I know that anything below that is info. 
+        </p>
+        
+        <div class="center">
+        <img class="smaller-image" src="Images/Code 2.png"></img>
+    </div>
+    
+        <p style="width: 75s%;" class="font-size white-text white-border">
+              In the HTML part of the project you need to add the text and put the images 
+              so they show in the website. You need to put an Id on the image wich has to 
+              be the same as the var that you identified it with in the javascript. For example
+              "hitlerImg" is the name of the var and the Id I put on the image so it connects the 
+              two. I put them in the HTML so they can show up but I also put an Id on them so 
+              I can use the javascript on the images. Its important that you name the Id's exactly
+              the same as you named it with the var so it connects correctly. 
+        </p>
+        
+        <div class="center">
+        <img class="smaller-image" src="Images/Code 3.png"></img>
+    </div>
+    
+    <p style="width: 75s%;" class="font-size white-text white-border">
+              For the other part of the javascript and the most important part of the project you 
+              need to add the event listeners. This is so the user can click on the image and it 
+              will actually do something, in this case make text pop up when you click the image. 
+              As you can see above, you add the img Id so the "click" event listener can work on 
+              that specific image. Below that you put the "If else" statement to add conditions 
+              to the image, you also put the Id for the info that you established before so that
+              it gets the text and displays it once you click it. This allows for the click to 
+              make the info disappear and appear depending on how many times the user clicks. 
+              In this case click once to make the info appear and click again to make it disappear.
+              Make sure to put the Id inside of the paragraph tag and that it matches the "var" that 
+              you made in the javascript page so it can appear once you click the image. You add an 
+              event listener and an "if else" statement for each picture and info pair you want to use.
+        </p>
